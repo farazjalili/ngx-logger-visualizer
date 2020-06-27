@@ -3,11 +3,10 @@ var express = require("express")
 var app = express()
 var db = require("./database.js")
 var bodyParser = require("body-parser");
+var cors = require('cors')
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-const url = require('url');
-const querystring = require('querystring');
-const { type } = require("os");
+app.use(cors())
 function isNumber(n) { return !isNaN(parseFloat(n)) && !isNaN(n - 0) }
 // Server port
 var HTTP_PORT = 8000 
