@@ -27,9 +27,34 @@
                 <div class="col-md-8 " style="padding-left:0px">
                     <div class="vs-grid-container">
                         <div class="vs-grid-title">Last log</div>
-                        <div class="vs-grid-body">
-                            sdfsdfdf sdfsdfdf sdfsdfdf sdfsdfdf sdfsdfdf sdfsdfdf sdfsdfdf sdfsdfdf sdfsdfdf
-                        </div>
+                        <table class="table table-bordered table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">id</th>
+                                    <th scope="col">message</th>
+                                    <th scope="col">additional</th>
+                                    <th scope="col">level</th>
+                                    <th scope="col">timestamp</th>
+                                    <th scope="col">fileName</th>
+                                    <th scope="col">lineNumber</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of logmodel">
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.message}}</td>
+                                    <td>{{item.additional}}</td>
+                                    <td>{{item.level}}</td>
+                                    <td>{{item.timestamp}}</td>
+                                    <td>{{item.fileName}}</td>
+                                    <td>{{item.lineNumber}}</td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+
                     </div>
 
                 </div>

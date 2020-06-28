@@ -4,6 +4,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FakeBackendInterceptor } from 'src/helper/fake-backend';
 import { AppService } from 'src/services/appservice';
 
 @NgModule({
@@ -15,7 +16,9 @@ import { AppService } from 'src/services/appservice';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [AppService],
+  providers: [AppService,
+    // { provide: HTTP_INTERCEPTORS, useClass: FakeBackendInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
