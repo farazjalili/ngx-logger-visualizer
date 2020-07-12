@@ -92,6 +92,7 @@ app.get("/log/*", (req, res, next) => {
 
 
     console.log(sql)
+    sql = sql + 'ORDER BY column1, column2, ... ASC|DESC';
     var params = []
     db.all(sql, params, (err, rows) => {
         if (err) {

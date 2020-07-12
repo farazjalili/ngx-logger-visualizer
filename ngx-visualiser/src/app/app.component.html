@@ -1,6 +1,9 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12 vs">
+        <div class="col-md-12 vs ">
+          <div class="vs-application-title">
+            SRC Log Manager
+          </div>
 
         </div>
     </div>
@@ -19,41 +22,62 @@
                         <img src="/assets/images/logo.png" height="110" width="110" />
                     </div>
                     <div style="padding-left: 16px;">
-                        <h4 class="vs-title">Header Of Project</h4>
+                        <h4 class="vs-title">Last Trace Project</h4>
+                        <small style="    color: #92abcf;">created date : July 2020</small>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-8 " style="padding-left:0px">
+                <div class="col-md-12" style="padding-left:0px">
                     <div class="vs-grid-container">
                         <div class="vs-grid-title">Last log</div>
-                        <table class="table table-bordered table-dark">
+                        <div style="height: 50vh;overflow: auto;">
+                          <table class="table table-bordered table-dark" style="font-size: 14px">
                             <thead>
-                                <tr>
-                                    <th scope="col">id</th>
-                                    <th scope="col">message</th>
-                                    <th scope="col">additional</th>
-                                    <th scope="col">level</th>
-                                    <th scope="col">timestamp</th>
-                                    <th scope="col">fileName</th>
-                                    <th scope="col">lineNumber</th>
+                            <tr>
+                              <th scope="col">Row</th>
+<!--                              <th scope="col">id</th>-->
+                              <th scope="col">Message</th>
+                              <th scope="col">Additional</th>
+                              <th scope="col">Level</th>
+                              <th scope="col">Timestamp</th>
+                              <th scope="col">File Name</th>
+                              <th scope="col">Line Number</th>
 
-                                </tr>
+                            </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let item of logmodel">
-                                    <td>{{item.id}}</td>
-                                    <td>{{item.message}}</td>
-                                    <td>{{item.additional}}</td>
-                                    <td>{{item.level}}</td>
-                                    <td>{{item.timestamp}}</td>
-                                    <td>{{item.fileName}}</td>
-                                    <td>{{item.lineNumber}}</td>
-                                </tr>
+                            <tr *ngFor="let item of logmodel; let i = index">
+                              <td>{{i}}</td>
+<!--                              <td>{{item.id}}</td>-->
+                              <td>{{item.message}}</td>
+                              <td>{{item.additional}}</td>
+                              <td>{{item.level}}</td>
+                              <td>{{item.timestamp}}</td>
+                              <td>{{item.fileName}}</td>
+                              <td>{{item.lineNumber}}</td>
+                            </tr>
 
 
                             </tbody>
-                        </table>
+                          </table>
+
+                        </div>
+                        <nav aria-label="..." style="    padding: 10px;">
+                          <ul class="pagination">
+                            <li class="page-item disabled">
+                              <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+<!--                            <li class="page-item active">-->
+<!--                              <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>-->
+<!--                            </li>-->
+<!--                            <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+                            <li class="page-item">
+                              <a class="page-link" href="#">Next</a>
+                            </li>
+                          </ul>
+                        </nav>
 
                     </div>
 
